@@ -1,0 +1,27 @@
+итог==ожидание
+1) to_list_positive - AssertionError: assert ['n', ' i', ' c', ' a'] == ['n', 'i', 'c', 'a']
+добавился пробел перед последним символом
+1.2)to_list_negative - AssertionError: assert ['n i c a'] == ['n', 'i', 'c', 'a']
+функция не обрабатывает пробел как разделитель
+
+2) contains_positive[Skypro-k-True] - AssertionError: assert False == True
+функция работает некорректно
+2.2) contains_positive[\u0421\u043a\u0430\u0439\u043f\u0440\u043e-\u043a-True] - 
+AssertionError: assert False == True
+функция некорректно обрабатывает пробелы и пустую строку
+
+3) contains_negative[Skypro-s-True] - AssertionError: assert False == True
+функция считывает строчную и заглавную буквы как разные буквы
+3.1)contains_negative[\u0421\u043a\u0430\u0439\u043f\u0440\u043e-\u043a-True] - 
+AssertionError: assert False == True
+функция некорректно обрабатывает пробелы и пустую строку
+
+4) starts_with_positive[my name nica-m-True] - AssertionError: assert False == True
+функция работает некорректно
+4.2)starts_with_positive[\u043c\u0435\u043d\u044f 
+\u0437\u043e\u0432\u0443\u0442 \u041d\u0438\u043a\u0430-\u043c-True] 
+- AssertionError: assert False == True
+функция некорректно обрабатывает пробелы и пустую строку
+
+5) end_with_negative - AssertionError: assert True == False
+который из этих не уточнили, но функция некорректно обрабатывает поиск пустоты и пробела
