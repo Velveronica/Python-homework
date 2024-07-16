@@ -9,6 +9,7 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 
 driver.get("https://uitestingplayground.com/dynamicid")
 
+sleep(10)
 count=0
 for i in range (3):
     
@@ -17,5 +18,4 @@ for i in range (3):
     print(count)
 
 
-
-sleep(50)
+driver.quit()

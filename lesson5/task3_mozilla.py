@@ -11,8 +11,8 @@ driver.get("http://uitestingplayground.com/classattr")
 
 for i in range (3):
     
-    driver.find_element(By.CSS_SELECTOR, "//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]").click()
+    driver.find_element(By.XPATH, "//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]").click()
+    sleep(3)
     driver.switch_to.alert.accept()
 
-
-sleep(50)
+driver.quit()

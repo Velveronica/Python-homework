@@ -17,4 +17,4 @@ for i in range (5):
 
 print({len(del_but)})
 
-sleep(50)
+driver.quit()

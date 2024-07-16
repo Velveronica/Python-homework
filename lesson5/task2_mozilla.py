@@ -17,5 +17,4 @@ for i in range (3):
     print(count)
 
 
-
-sleep(50)
+driver.quit()
