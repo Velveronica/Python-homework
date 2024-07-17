@@ -1,0 +1,6 @@
+
+Локатор кнопки Войти - <data-widget="profileMenuAnonymous">
+Локатор кнопки Заказы - <data-widget="orderInfo">
+Локатор ссылки OZON Job (в футере) - <src="https://ir-2.ozone.ru/s3/cms/12/tdb/group_357672.png">
+Локатор выбора валюты (верхний левый угол страницы) - <data-widget="selectedCurrency">
+Локатор выпадашки Везде (в поисковой строке) - <class="a1ad_32">
