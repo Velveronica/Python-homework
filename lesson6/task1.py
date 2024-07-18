@@ -9,7 +9,6 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 
 driver.implicitly_wait(25)
 driver.get("https://uitestingplayground.com/ajax")
-sleep(5)
 
 driver.find_element(By.XPATH, '//*[@id="ajaxButton"]').click()
 
@@ -17,5 +16,4 @@ content=driver.find_element(By.CSS_SELECTOR, "#content > p")
 txt=content.find_element(By.XPATH, '//*[@id="content"]/p').text
 print(txt)
 
-sleep(5)
 driver.quit()

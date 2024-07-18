@@ -9,12 +9,11 @@ from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 driver.get("https://uitestingplayground.com/textinput?")
-sleep(5)
+
 
 input=driver.find_element(By.XPATH, '//*[@id="newButtonName"]' )
 
 input.send_keys("Skypro")
-sleep(5)
 
 driver.find_element(By.CSS_SELECTOR, "#updatingButton").click()
 name=driver.find_element(By.CSS_SELECTOR, "#updatingButton").text

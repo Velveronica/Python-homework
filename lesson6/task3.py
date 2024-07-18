@@ -12,7 +12,6 @@ driver.implicitly_wait(25)
 driver.get("https://bonigarcia.dev/selenium-webdriver-java/loading-images.html")
 
 driver.find_element(By.XPATH, '//*[@id="landscape"]')
-sleep(5)
 
 href=driver.find_element(By.CSS_SELECTOR, '#award').get_attribute("src")
 
