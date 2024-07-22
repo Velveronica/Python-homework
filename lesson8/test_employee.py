@@ -1,4 +1,5 @@
 
+import pytest
 import requests
 from employeeApi import EmployeeApi
 
@@ -29,7 +30,7 @@ def test_add_emp():
     phone="86666666666"
 
     result=api.create_emp(firstName, lastName, middleName, email, phone, id)
-    assert resp.status_code==201
+    assert result.status_code==201
 
     body=api.get_list_emp()
     len_after=len(body)
@@ -49,12 +50,16 @@ def test_edit_emp():
     isActive="isActive"
 
     result=api.create_emp(firstName, lastName, middleName, email, phone, id)
+    assert result.status_code==201
         
     new_lastName="Popova"
+    new_email="newVV@mail.ru"
     new_phone="89996666666"
     
-    edited=api.edit(new_lastName, new_phone)
+    edited=api.edit(new_lastName, new_phone, new_email, isActive)
 
+    assert edited.status_code==200
     assert edited[phone]==new_phone
     assert edited[lastName]==new_lastName
-    assert edited[isActive]==True
+    assert edited[email]==new_email
+    assert edited[isActive]==isActive
