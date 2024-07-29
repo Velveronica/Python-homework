@@ -1,1 +1,0 @@
-print("idi v banu")
