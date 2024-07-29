@@ -1,3 +1,5 @@
+
+import allure
 import pytest
 from selenium import webdriver
 from time import sleep
@@ -11,6 +13,14 @@ from input import Input
 from order import Order
 from shop import Shopping
 
+@allure.epic("Заказ в интернет-магазине") 
+@allure.severity("blocker")
+
+@allure.id("SKYPRO-1")
+@allure.story("Заказ в интернет-магазине")
+@allure.feature("CREATE")
+@allure.title("Определение полной стоимости интернет-заказа")
+@allure.description("Авторизация в интернет-магазине, выбор товаров, оформление заказа и получение итоговой стоимости")
 def test_shop():
 
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))

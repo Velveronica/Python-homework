@@ -1,4 +1,5 @@
 
+import allure
 import pytest
 from selenium import webdriver
 from time import sleep
@@ -16,10 +17,12 @@ class Shopping:
         self.browser=browser
         self.browser.get("https://www.saucedemo.com/inventory.html")
 
-    def choise(self, product):
+    @allure.step("Выбрать товар {product}")
+    def choise(self, product: str):
         
         self.browser.find_element(By.XPATH, product).click()
 
+    @allure.step("Перейти в корзину и оформить заказа")
     def cart(self):
         
         self.browser.find_element(By.XPATH, '//*[@id="shopping_cart_container"]/a').click()

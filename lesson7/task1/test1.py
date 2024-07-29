@@ -1,4 +1,5 @@
 
+import allure
 import pytest
 from selenium import webdriver
 from time import sleep
@@ -7,6 +8,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from form_page import Formtest
+
+@allure.epic("Проверка формы") 
+@allure.severity("blocker")
+
+@allure.id("SKYPRO-1")
+@allure.story("Заполнение формы")
+@allure.feature("CREATE")
+@allure.title("Заполнение формы с одним пустым полем")
+@allure.description("Проверка подсветки заполненных и незаполненных полей формы")
 
 def test_fill_form():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))

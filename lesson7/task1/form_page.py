@@ -1,4 +1,5 @@
 
+import allure
 import pytest
 from selenium import webdriver
 from time import sleep
@@ -13,7 +14,8 @@ class Formtest:
         self.browser=browser
         self.browser.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
 
-    def pill_form(self, firstname, lastname, address, zip_code, city, country, email, telephone, job_position,company):
+    @allure.step("Заполнить форму {firstname}, {lastname}, {address}, {zip_code}, {city}, {country}, {email}, {telephone}, {job_position}, {company}")
+    def pill_form(self, firstname: str, lastname: str, address: str, zip_code: str, city: str, country: str, email: str, telephone: str, job_position: str,company: str):
         
         self.browser.find_element(By.XPATH, '/html/body/main/div/form/div[1]/div[1]/label/input').send_keys(firstname)
         self.browser.find_element(By.XPATH, '/html/body/main/div/form/div[1]/div[2]/label/input').send_keys(lastname)
@@ -26,11 +28,13 @@ class Formtest:
         self.browser.find_element(By.XPATH, '/html/body/main/div/form/div[4]/div[1]/label/input').send_keys(job_position)
         self.browser.find_element(By.XPATH, '/html/body/main/div/form/div[4]/div[2]/label/input').send_keys(company)
     
+    @allure.step("Нажать кнопку Submit")
     def click_submit(self):
 
         self.browser.find_element(By.XPATH, '/html/body/main/div/form/div[5]/div/button').click()
 
-    def color_check(self, element):
+    @allure.step("Получить атрибут поля class")
+    def color_check(self, element= str):
 
         return self.browser.find_element(By.ID, element).get_attribute("class")
 

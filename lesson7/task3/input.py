@@ -1,4 +1,5 @@
 
+import allure
 import pytest
 from selenium import webdriver
 from time import sleep
@@ -16,6 +17,7 @@ class Input:
         self.browser=browser
         self.browser.get("https://www.saucedemo.com/")
 
+    @allure.step("Авторизация, {client}:{password}")
     def vhod(self, client, password):
 
         self.browser.find_element(By.XPATH, '//*[@id="user-name"]').send_keys(client)
